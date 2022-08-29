@@ -1,5 +1,3 @@
-from televisores.control import Control
-from televisores.marca import Marca
 class TV:
     __numTV = 0
 
@@ -41,14 +39,14 @@ class TV:
 
     def setVolumen(self, volu):
         if self.__estado == True and volu>=1 and volu<=7:
-            self._volumen = volu
+            self.__volumen = volu
 
     def getVolumen(self):
         return self.__volumen
 
     def setCanal(self, can):
         if self.__estado == True and can>=1 and can<=120:
-            self._canal = can
+            self.__canal = can
 
     def getCanal(self):
         return self.__canal
