@@ -1,9 +1,9 @@
 class TV:
     __numTV = 0
 
-    def setNumTV(num):
+    def setNumTV(cls,num):
         TV.__numTV = num
-    def getNumTV():
+    def getNumTV(cls):
         return TV.__numTV
 
 
@@ -15,6 +15,12 @@ class TV:
         self.__volumen =1
         self.__control = None
         TV.__numTV += 1
+
+    def __init__(self, mar, esta):
+
+        TV.__numTV += 1
+        self.__marca = mar
+        self.__estado = esta
 
     def setMarca(self, mar):
         self.__marca = mar
@@ -32,12 +38,16 @@ class TV:
         return self.__precio
 
     def setVolumen(self, volu):
-        self.__volumen = volu
+        if self.__estado == True and volu>=1 and volu<=7:
+            self._volumen = volu
+
     def getVolumen(self):
         return self.__volumen
 
     def setCanal(self, can):
-        self.__canal = can
+        if self.__estado == True and can>=1 and can<=120:
+            self._canal = can
+
     def getCanal(self):
         return self.__canal
 
